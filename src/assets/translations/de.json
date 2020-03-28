@@ -72,5 +72,12 @@
     "dataCare": ", denken Sie daran, dass unsere Daten auf Selbstberichten basieren, daher sind die Daten nicht offiziell und können Fehler enthalten. Die Daten sollen nur als Indikator dienen.",
     "headImprovement": "Wenn Sie Verbesserungsvorschläge haben",
     "improvement": " oder einen Fehler melden möchten, wenden Sie sich bitte an uns über Facebook."
+  },
+  "faq": {
+    "title": "FAQ",
+    "goalQuestion": "Was ist das Ziel dieser App?",
+    "goalResponse": "Unser Ziel ist es die Ausbreitung der Covid-19-Pandemie in unserem Land zu visualisieren. Weil es ohne einen statistisichen Überblick über die aktuelle Situation schwierig ist, die Kurve abzuflachen. Hilf uns indem du deinen Gesundheitstatus anonym publizierst.",
+    "othersQuestion": "Wie kann ich andere Mitglieder meiner Familie erfassen?",
+    "othersResponse": "Wir arbeiten daran. Für den Moment kannst du je Familinemitglied ein unterschiedliches Gerät (Smartphone, Tablet, Computer) zur Erfassung nutzen."
   }
 }
