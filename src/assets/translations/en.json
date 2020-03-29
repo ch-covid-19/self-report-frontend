@@ -12,7 +12,7 @@
   "renewReport": {
     "comingBack": "Thanks for coming back",
     "daysSince": "It has been {days} days since your last report.",
-    "explainOther": "If you want to report for someone else, please use another phone, tablet or computer.",
+    "explainOther": "If you want to fill the report for someone else, please use another phone, tablet or computer.",
     "click": "Click",
     "here": "here",
     "ifNotYou": "if it wasn't you."
@@ -55,7 +55,7 @@
     "sentThanks": "Thanks",
     "sentComeBack": "Thank you for your contribution. Please come back if your health status changes.",
     "sentSomeoneElse": "If you want to report for someone else, please use another phone, tablet or computer.",
-    "sentMistake": "You've made a mistake ? You can make a correction : ",
+    "sentMistake": "You've made a mistake ? You can correct it: ",
     "sentMistakeClickHere": "click here"
   },
   "visualize": {
@@ -72,19 +72,19 @@
   "about": {
     "title": "About",
     "headWho": "We are a team of swiss developers",
-    "who": "that want to help to evaluate the current situation of the COVID-19 pandemia in our country.",
+    "who": "that want to help to evaluate the current situation of the COVID-19 pandemic in our country.",
     "headNeedYou": "We need you!",
-    "needYou": "Our app is based on your self-reporting...so that important that all of you come to update your health status in case of change.",
+    "needYou": "Our app is based on your self-reporting... it is important that all of you update your health status in case of change.",
     "headData": "We don’t save any personal information in our servers!",
-    "data": "Every data is anonymous but to keep our datasets consistent, we need that you use always the same browser to update your status (otherwise you will be counted twice).",
+    "data": "Every data is anonymous but to keep our datasets consistent, we need that you always use the same browser to update your status (otherwise you will be counted twice).",
     "headDataUpdate": "Realtime, well...no!",
     "dataUpdate": "Realtime, well...no! We will provide update of the numbers as frequently as we can. But, you will need to wait a bit especially during the beginning phase of the app.",
     "headPublicData": "For the other developers,",
     "publicData": "our dataset is public and open in our github. Please use it to make your own awesome visualization.",
-    "headDataCare": "Bye the way,",
-    "dataCare": " keep in mind that our dataset is based on self-reporting from peoples thus the data are not official and could contains errors. The data is only intended to be used as an indicator.",
+    "headDataCare": "By the way,",
+    "dataCare": " keep in mind that our dataset is based on self-reporting from the community thus the data is not official and could contain errors. The data is only intended to be used as an indicator.",
     "headImprovement": "If you have any suggestion",
-    "improvement": "of improvement or you want to report an error, please contact on Facebook."
+    "improvement": "for improvement or you want to report an error, please contact us on Facebook."
   },
   "faq": {
     "title": "FAQ",
