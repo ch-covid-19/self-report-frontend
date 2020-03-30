@@ -15,21 +15,37 @@
     name: "location-from-address",
     components: {},
     props: {
-      location: null,
+      location: String,
       valid: Boolean,
     },
-    async created() {
-        let geoData = await this.getGrouppedData()
+    watch: { 
+      	location: function(newVal, oldVal) {
+          if (newVal) {
+            this.setAddressByPostalCode(newVal)
+          }
+        }
+    },
+    async mounted() {
+        let geoData = {}
+        try {
+          geoData = await this.getGrouppedData(this.location)
+        } catch (error) {
+          this.error = error
+        }
 
         this.geolocationData = geoData.data
         this.levels = geoData.depth
-        console.log(this.levels)
-        for (let i = 0; i < this.levels; i++) {
-          this.levelsArray.push(i)
-          this.selectedOptions.push(null)
-          this.inputDisabled.push(true)
-        }
+        this.postalCodeMap = geoData.postalCodeMap
+
+        this.levelsArray = Array.from(Array(this.levels).keys())
+        this.inputDisabled = Array(this.levels).fill(true)
+        this.selectedOptions = Array(this.levels).fill(null)
         this.inputDisabled[0] = false
+
+
+        if (this.location) {
+          this.setAddressByPostalCode(this.location)
+        }
 
     },
     data() {
@@ -40,7 +56,9 @@
         currentLevel: 0,
         selectedOptions: [ ],
         inputDisabled: [ ],
-        postalCode: null
+        postalCode: null,
+        error: null,
+        postalCodeMap: { }
       }
     },
     methods: {
@@ -95,7 +113,6 @@
       },
 
       async getGrouppedData() {
-        console.log(process.env.VUE_APP_VISU_GEOCODE_URL)
         let data = await new Promise(function(resolve, reject) {
             Papa.parse(process.env.VUE_APP_VISU_GEOCODE_URL, {
                 download: true,
@@ -113,13 +130,15 @@
           depth = data[0].region_id.split('::').length;
         }
         data.forEach(d => {
-            d.region_id = d.region_id.split('::')
+          d.region_id = d.region_id.split('::')
             d.region_id[d.region_id.length - 1] = d.region_id[d.region_id.length - 1].split('||')
         })
 
         let res = {}
+        let postalCodeMap = { }
 
         data.forEach(d => {
+            postalCodeMap[d.postal_code] = d.region_id
             let t = res
             for (let i = 0; i < d.region_id.length - 1; i++) {
                 if (t[d.region_id[i]] === undefined) {
@@ -135,9 +154,18 @@
 
         return {
           data: res,
-          depth: depth
+          depth: depth,
+          postalCodeMap: postalCodeMap
         }
 
+      },
+      setAddressByPostalCode(postalCode) {
+        if (postalCode && this.postalCodeMap[postalCode]) {
+          this.selectedOptions = this.postalCodeMap[postalCode].map(x => Array.isArray(x) ? x[0] : x)
+          this.inputDisabled = Array(this.levels).fill(false)
+          this.currentLevel = this.selectedOptions.length - 1
+          this.$emit('update:valid', true);
+        }
       }
     }
   }
