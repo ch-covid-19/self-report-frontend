@@ -8,6 +8,7 @@ import BaseProgress from "../components/BaseProgress";
 import BaseRadio from "../components/BaseRadio";
 import BaseSlider from "../components/BaseSlider";
 import BaseSwitch from "../components/BaseSwitch";
+import BaseSelect from "../components/BaseSelect";
 import Card from "../components/Card";
 import Icon from "../components/Icon";
 
@@ -23,6 +24,7 @@ export default {
         Vue.component(BaseRadio.name, BaseRadio);
         Vue.component(BaseSlider.name, BaseSlider);
         Vue.component(BaseSwitch.name, BaseSwitch);
+        Vue.component(BaseSelect.name, BaseSelect);
         Vue.component(Card.name, Card);
         Vue.component(Icon.name, Icon);
     }
