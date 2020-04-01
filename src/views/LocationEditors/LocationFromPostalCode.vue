@@ -35,8 +35,8 @@
         if (this.location === null) {
           return false;
         }
-
-        return value.length === 4 && !isNaN(value);
+        return value.length === parseInt(process.env.VUE_APP_PINCODE_LENGTH_VALIDATION) && !isNaN(value);
+        
       },
     },
     watch: {

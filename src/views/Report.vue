@@ -224,6 +224,14 @@
           </div>
 
           <div v-else class="text-white">
+            <h3 class="text-white"> {{ $t('report.wantToSeePublicData') }}
+              <router-link class="nav-link" to="/visualize">
+                <base-button size="sm" type="info">
+                  {{ $t('report.seePublicData') }}
+                </base-button>
+              </router-link>
+            </h3>
+            <br>
             <h3 class="text-white">{{ $t('report.sentThanks') }}</h3>
             <p>{{ $t('report.sentComeBack') }}</p>
             <p>{{ $t('report.sentSomeoneElse') }}</p>

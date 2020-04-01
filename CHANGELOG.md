@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.3.1] 2020-04-03
+
+### Added
+
+- Added VUE_APP_PINCODE_LENGTH_VALIDATION=<int> e.g., 6 for India; 4 for Swiss.
+- Improved Readme for ``VUE_APP_REPORT_LOCATION_SELECTOR=postal-code`
+- Added MAP view button immediately after submission page
+
 ## [1.3.0] 2020-03-31
 
 ### Added
