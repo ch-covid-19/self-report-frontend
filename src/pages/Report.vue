@@ -246,8 +246,8 @@
 
   import Modal from '@/components/Modal.vue';
   import newGithubIssueUrl from 'new-github-issue-url';
-  import LocationFromPostalCode from "./LocationEditors/LocationFromPostalCode";
-  import LocationFromAddress from "./LocationEditors/LocationFromAddress";
+  import LocationFromPostalCode from "../views/LocationEditors/LocationFromPostalCode";
+  import LocationFromAddress from "../views/LocationEditors/LocationFromAddress";
 
   export default {
     name: "report",

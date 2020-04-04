@@ -3,10 +3,10 @@ import Router from "vue-router";
 import AppHeader from "./layout/AppHeader";
 import AppFooter from "./layout/AppFooter";
 
-import Report from "./views/Report.vue";
-import Visualize from "./views/Visualize";
-import About from "./views/About";
-import Faq from "./views/Faq";
+import Report from "./pages/Report.vue";
+import Visualize from "./pages/Visualize";
+import About from "./pages/About";
+import Faq from "./pages/Faq";
 
 Vue.use(Router);
 
