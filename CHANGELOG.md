@@ -10,6 +10,7 @@
 ### Changed
 
 - The map is now a component
+- Markers size is now logarithmic 
 
 ## [1.3.0] 2020-03-31
 
