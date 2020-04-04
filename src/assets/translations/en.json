@@ -14,7 +14,9 @@
         "language": "English"
     },
     "home": {
-        "title": "Home"
+        "title": "Home",
+        "introTitle": "Help to fight the Coronavirus",
+        "introText": "We aim to provide a visualization of the progression of the Covid-19 pandemic in our country. To do so, we encourage people to report anonymously their own health status to contribute to an open database that is complementary to the official census"
     },
     "renewReport": {
         "comingBack": "Thanks for coming back",

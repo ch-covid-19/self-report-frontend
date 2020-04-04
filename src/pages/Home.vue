@@ -11,9 +11,9 @@
           <div class="row mt-3">
             <div class="col-md-6">
 
-              <h3 class="text-white">Help to fight the Coronavirus</h3>
+              <h3 class="text-white">{{ $t('home.introTitle') }}</h3>
 
-              <p class="text-white">{{ $t(`faq.goalResponse`, {disease: 'Covid-19'}) }}</p>
+              <p class="text-white">{{ $t('home.introText') }}</p>
 
               <base-button class="mb-3 mb-sm-0"
                            @click="$router.replace({ name: 'report' })"
@@ -26,7 +26,11 @@
             <div class="col-12 my-3">
               <reports-map :reports-data="lastDayReports"
                            :geocoding-data="$store.state.geocoding"
+                           :layers="['sick_guess_corona', 'sick_corona_confirmed']"
                            no-filters></reports-map>
+              <p class="text-white" v-if="$store.state.reportsLastUpdate">
+                <small>{{ $t('visualize.lastUpdate') }} {{ $store.state.reportsLastUpdate.toLocaleString() }}</small>
+              </p>
             </div>
           </div>
         </div>

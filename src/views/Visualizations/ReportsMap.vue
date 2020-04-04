@@ -52,6 +52,8 @@
       reportsData: Array,
       geocodingData: Object,
 
+      layers: Array,
+
       noFilters: {type: Boolean, default: false},
     },
     data() {
@@ -151,6 +153,13 @@
         console.log(`Loading reports map`);
 
         this.enabledLayers = this.layersDefinition.filter(l => l.enabled);
+
+        if (this.layers) {
+          for (const layer of this.layers) {
+            const layerDefinition = this.layersDefinition.filter(l => l.id === layer)[0];
+            layerDefinition.visible = true;
+          }
+        }
 
         _map = L.map('leaflet-map', {
           preferCanvas: true,
