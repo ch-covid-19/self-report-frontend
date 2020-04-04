@@ -18,24 +18,30 @@
       <ul class="navbar-nav navbar-nav-hover align-items-lg-center">
 
         <li class="nav-item">
-          <router-link class="nav-link" to="/">
+          <router-link class="nav-link" :to="{ name: 'home' }">
+            {{ $t('home.title') }}
+          </router-link>
+        </li>
+
+        <li class="nav-item">
+          <router-link class="nav-link" :to="{ name: 'report' }">
             {{ $t('report.title') }}
           </router-link>
         </li>
 
         <li class="nav-item">
-          <router-link class="nav-link" to="/visualize">
+          <router-link class="nav-link" :to="{ name: 'visualize' }">
             {{ $t('visualize.title') }}
           </router-link>
         </li>
         <li class="nav-item">
-          <router-link class="nav-link" to="/faq">
+          <router-link class="nav-link" :to="{ name: 'faq' }">
             {{ $t('faq.title') }}
           </router-link>
         </li>
 
         <li class="nav-item">
-          <router-link class="nav-link" to="/about">
+          <router-link class="nav-link" :to="{ name: 'about' }">
             {{ $t('about.title') }}
           </router-link>
         </li>

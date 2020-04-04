@@ -80,8 +80,14 @@ Vue.use(VueReCaptcha, {
   siteKey: process.env.VUE_APP_RECAPTCHA_KEY
 });
 
+/* Store */
+import Vuex from 'vuex';
+
+import {store} from './store/store'
+
 new Vue({
   i18n,
   router,
+  store,
   render: h => h(App)
 }).$mount("#app");

@@ -6,7 +6,7 @@
       <p v-html="error"></p>
     </base-alert>
 
-    <div v-if="showFilters">
+    <div v-if="!noFilters">
       <base-button v-for="(layerDefinition) in enabledLayers" :key="layerDefinition.id"
                    class="mb-3"
                    size="sm"
@@ -46,13 +46,13 @@
         default: process.env.VUE_APP_VISU_MAP_ZOOM_LEVEL,
       },
 
-      minBubbleSize: {type: Number, default: process.env.VUE_APP_VISU_MAP_MIN_MARKER_SIZE},
-      maxBubbleSize: {type: Number, default: process.env.VUE_APP_VISU_MAP_MAX_MARKER_SIZE},
+      minBubbleSize: {type: Number, default: +process.env.VUE_APP_VISU_MAP_MIN_MARKER_SIZE},
+      maxBubbleSize: {type: Number, default: +process.env.VUE_APP_VISU_MAP_MAX_MARKER_SIZE},
 
       reportsData: Array,
       geocodingData: Object,
 
-      showFilters: {type: Boolean, default: true},
+      noFilters: {type: Boolean, default: false},
     },
     data() {
       return {

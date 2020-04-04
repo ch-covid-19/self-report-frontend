@@ -7,11 +7,14 @@
             "whatsappshare": "Report your health status to help fighting against the Covid-19!",
             "ch": "Switzerland",
             "in": "India",
-            "me": "Mexico"
+            "mx": "Mexico"
         },
         "yes": "Yes",
         "no": "No",
         "language": "English"
+    },
+    "home": {
+        "title": "Home"
     },
     "renewReport": {
         "comingBack": "Thanks for coming back",
