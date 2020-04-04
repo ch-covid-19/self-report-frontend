@@ -54,6 +54,7 @@
   import 'flatpickr/dist/flatpickr.css';
 
   import ReportsMap from "../views/Visualizations/ReportsMap";
+  import {mapState} from "vuex";
 
   export default {
     name: "visualize",
@@ -74,16 +75,23 @@
     },
     async mounted() {
       this.dateFilter = this.$store.state.reportsLastDay;
-
       this.computeMapViewport();
     },
     computed: {
+      ...mapState([
+        'reportsLastDay'
+      ]),
       reportsOfDay() {
         if (!this.$store.state.reports) {
           return null;
         }
         /* Filter data in date only */
         return this.$store.state.reports.filter(l => l.date === this.dateFilter);
+      }
+    },
+    watch: {
+      reportsLastDay(newValue, oldValue) {
+        this.dateFilter = newValue;
       }
     },
     methods: {
