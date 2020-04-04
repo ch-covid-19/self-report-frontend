@@ -1,5 +1,22 @@
 # Changelog
 
+## [1.4.0] 2020-04-04
+
+### Added
+
+- New home page
+- Added global store to keep geocoding and reports data
+
+### Changed
+
+- The map is now a component
+- Markers size is now logarithmic 
+
+### Fixed
+
+- The menu now closes after an action
+- Mexico flag is now correct
+
 ## [1.3.0] 2020-03-31
 
 ### Added

@@ -13,11 +13,11 @@
           <div class="col text-white">
             <h1 class="display-3 text-white">{{ $t('faq.title') }}</h1>
 
-            <h3 class="text-white">{{ $t(`faq.goalQuestion`, {disease: 'Covid-19'}) }}</h3>
-            <p>{{ $t(`faq.goalResponse`, {disease: 'Covid-19'}) }}</p>
+            <h3 class="text-white">{{ $t(`faq.goalQuestion`) }}</h3>
+            <p>{{ $t(`faq.goalResponse`) }}</p>
 
-            <h3 class="text-white">{{ $t(`faq.othersQuestion`, {disease: 'Covid-19'}) }}</h3>
-            <p>{{ $t(`faq.othersResponse`, {disease: 'Covid-19'}) }}</p>
+            <h3 class="text-white">{{ $t(`faq.othersQuestion`) }}</h3>
+            <p>{{ $t(`faq.othersResponse`) }}</p>
 
           </div>
         </div>

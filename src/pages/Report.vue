@@ -30,8 +30,6 @@
 
                 <p class="text-white">{{ $t('report.intro') }}</p>
 
-                <p class="text-white">{{ $t(`faq.goalResponse`, {disease: 'Covid-19'}) }}</p>
-
                 <h1 class="display-3 text-white">{{ $t('report.how') }}</h1>
 
                 <div class="btn-wrapper">
@@ -244,13 +242,13 @@
 <script>
   import {v4 as uuidv4} from 'uuid';
 
-  import Modal from '@/components/Modal.vue';
+  import Modal from '@/components/Modal';
   import newGithubIssueUrl from 'new-github-issue-url';
-  import LocationFromPostalCode from "./LocationEditors/LocationFromPostalCode";
-  import LocationFromAddress from "./LocationEditors/LocationFromAddress";
+  import LocationFromPostalCode from '../views/LocationEditors/LocationFromPostalCode';
+  import LocationFromAddress from '../views/LocationEditors/LocationFromAddress';
 
   export default {
-    name: "report",
+    name: 'report',
     components: {
       LocationFromAddress,
       LocationFromPostalCode,
