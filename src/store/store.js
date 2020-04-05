@@ -48,7 +48,7 @@ export const store = new Vuex.Store({
                 for (const [i, region] of regions.entries()) {
 
                   if (i === regions.length - 1) {
-                    location.places = region.split('||');
+                    location.places = region.split('||').sort((a, b) => a.localeCompare(b));
                   } else {
                     location.regions.push(region);
                   }

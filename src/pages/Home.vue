@@ -9,7 +9,7 @@
         </div>
         <div class="container shape-container d-flex">
           <div class="row mt-3">
-            <div class="col-md-6">
+            <div class="col-12">
 
               <h3 class="text-white">{{ $t('home.introTitle') }}</h3>
 

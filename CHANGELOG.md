@@ -1,6 +1,12 @@
 # Changelog
 
-## [1.4.1] 2020-04-04
+## [1.5.0] 2020-04-05
+
+### Added
+
+- Add address selector
+
+## [1.4.1] 2020-04-05
 
 Changes by @pksec
 

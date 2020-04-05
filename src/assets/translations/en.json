@@ -68,6 +68,10 @@
         "sentMistakeClickHere": "click here",
         "wantToSeePublicData": "Your contribution helps to build a public dataset. If you want to see the current data, click:"
     },
+    "locationAddress": {
+        "yourPostalCode": "Your postal code is {ignore_postalcode}",
+        "xMore": "+{ignore_count} more"
+    },
     "visualize": {
         "title": "Visualize",
         "dataWarning": "The following data is community collected and not verified.",
