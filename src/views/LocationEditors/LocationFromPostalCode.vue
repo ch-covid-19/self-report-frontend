@@ -4,7 +4,7 @@
                 @input="locationChanged"
                 type="number"
                 :placeholder="$t('report.locationPlaceholder')"
-                :error="enableCheck && !valid ? $t('report.locationValidError') : ''"
+                :error="enableCheck && !valid ? $t('report.locationValidError', { length: process.env.VUE_APP_PINCODE_LENGTH_VALIDATION }) : ''"
                 @focusout="enableCheck = true"
                 :valid="!enableCheck ? null : valid"></base-input>
   </div>
@@ -32,11 +32,21 @@
         this.$emit('update:location', value);
       },
       isValid(value) {
-        if (this.location === null) {
+        if (value === null) {
           return false;
         }
 
-        return value.length === 4 && !isNaN(value);
+        if (isNaN(value)) {
+          return false;
+        }
+
+        if (process.env.VUE_APP_PINCODE_LENGTH_VALIDATION) {
+          if (value.length !== parseInt(process.env.VUE_APP_PINCODE_LENGTH_VALIDATION)) {
+            return false
+          }
+        }
+
+        return true;
       },
     },
     watch: {

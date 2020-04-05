@@ -65,7 +65,8 @@
         "sentComeBack": "Thank you for your contribution. Please come back if your health status changes.",
         "sentSomeoneElse": "If you want to file a report for someone else, please use another phone, tablet or computer.",
         "sentMistake": "You've made a mistake ? You can correct it : ",
-        "sentMistakeClickHere": "click here"
+        "sentMistakeClickHere": "click here",
+        "wantToSeePublicData": "Your contribution helps to build a public dataset. If you want to see the current data, click:"
     },
     "visualize": {
         "title": "Visualize",
