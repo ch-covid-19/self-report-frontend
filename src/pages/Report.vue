@@ -25,7 +25,11 @@
               </div>
             </div>
 
-            <report-classic :report-data="reportData"></report-classic>
+            <report-disease-oriented v-if="reportForm === 'disease'"
+                                     :report-data="reportData"></report-disease-oriented>
+
+            <report-classic v-else
+                            :report-data="reportData"></report-classic>
 
             <div class="row mt-3" v-show="reportData.sick !== null">
               <div class="col-lg-6">
@@ -122,10 +126,12 @@
   import LocationFromPostalCode from '../views/LocationEditors/LocationFromPostalCode';
   import LocationFromAddress from '../views/LocationEditors/LocationFromAddress';
   import ReportClassic from "../views/ReportForms/Classic";
+  import ReportDiseaseOriented from "../views/ReportForms/DiseaseOriented";
 
   export default {
     name: 'report',
     components: {
+      ReportDiseaseOriented,
       ReportClassic,
       LocationFromAddress,
       LocationFromPostalCode,
@@ -138,12 +144,14 @@
         forceReportAgain: false,
 
         locationSelector: process.env.VUE_APP_REPORT_LOCATION_SELECTOR,
+        reportForm: process.env.VUE_APP_REPORT_FORM,
         validLocation: false,
 
         reportData: {
           sessionId: null,
           sick: null,
           symptoms: [],
+          symptomsDays: 0,
           diagnostic: null,
           postalCode: null,
           lastReport: null,
@@ -217,6 +225,7 @@
               locator: this.reportData.postalCode,
               sessionId: this.reportData.sessionId,
               symptoms: symptoms,
+              symptomsDays: this.reportData.symptomsDays,
               diagnostic: this.reportData.diagnostic,
               appVersion: process.env.VERSION,
             }),
@@ -263,6 +272,7 @@
           sessionId: null,
           sick: null,
           symptoms: [],
+          symptomsDays: 0,
           diagnostic: null,
           postalCode: '',
           lastReport: null,

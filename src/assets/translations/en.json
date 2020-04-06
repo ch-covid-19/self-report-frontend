@@ -66,7 +66,14 @@
         "sentSomeoneElse": "If you want to file a report for someone else, please use another phone, tablet or computer.",
         "sentMistake": "You've made a mistake ? You can correct it : ",
         "sentMistakeClickHere": "click here",
-        "wantToSeePublicData": "Your contribution helps to build a public dataset. If you want to see the current data, click:"
+        "wantToSeePublicData": "Your contribution helps to build a public dataset. If you want to see the current data, click:",
+        "drAreYouSick": "Are you actually sick from Covid-19?",
+        "drUnknown": "I don't know",
+        "drHaveSymptoms": "Do you have any of the following symptoms?",
+        "drSymptomsDays": "When did you have your first symptoms?",
+        "drTested": "Have you been tested for Covid-19?",
+        "drTestedDetails": "Have you been tested by your doctor, at the hospital or by the authorities? ",
+        "drTestResult": "Was the test positive?"
     },
     "locationAddress": {
         "yourPostalCode": "Your postal code is {ignore_postalcode}",

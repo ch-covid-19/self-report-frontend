@@ -6,20 +6,25 @@
 
         <p class="text-white">{{ $t('report.intro') }}</p>
 
-        <h1 class="display-3 text-white">{{ $t('report.how') }}</h1>
+        <h1 class="display-3 text-white">{{ $t('report.drAreYouSick') }}</h1>
 
         <div class="btn-wrapper">
           <base-button class="mb-3 mb-sm-0"
-                       @click="reportData.sick = false"
+                       @click="reportData.sick = false; reportData.diagnostic = null"
                        :type="reportData.sick === false ? 'success' : 'white'"
                        icon="fa fa-heartbeat">
-            {{ $t('report.healthy') }}
+            {{ $t('app.no') }}
           </base-button>
           <base-button class="mb-3 mb-sm-0"
-                       @click="reportData.sick = true"
+                       @click="reportData.sick = 'unknown'; reportData.diagnostic = 0; refreshUnknownSickStatus()"
+                       :type="reportData.sick === 'unknown' ? 'warning' : 'white'">
+            {{ $t('report.drUnknown') }}
+          </base-button>
+          <base-button class="mb-3 mb-sm-0"
+                       @click="reportData.sick = true; reportData.diagnostic = null"
                        :type="reportData.sick === true ? 'danger' : 'white'"
                        icon="ni ni-atom">
-            {{ $t('report.sick') }}
+            {{ $t('app.yes') }}
           </base-button>
         </div>
 
@@ -28,7 +33,7 @@
 
     <div class="row mt-3" v-show="reportData.sick === false">
       <div class="col-lg-6">
-        <h3 class="text-white">{{ $t('report.contract', { disease: disease}) }}</h3>
+        <h3 class="text-white">{{ $t('report.contract') }}</h3>
 
         <div class="btn-wrapper">
           <base-button class="mb-2"
@@ -76,10 +81,22 @@
       </div>
     </div>
 
+
     <div class="row mt-3" v-show="reportData.sick === true">
       <div class="col-lg-6">
         <h3 class="text-white">{{ $t('report.symptoms') }}</h3>
+      </div>
+    </div>
 
+
+    <div class="row mt-3" v-show="reportData.sick === 'unknown'">
+      <div class="col-lg-6">
+        <h3 class="text-white">{{ $t('report.drHaveSymptoms') }}</h3>
+      </div>
+    </div>
+
+    <div class="row mt-3" v-show="reportData.sick === true || reportData.sick === 'unknown'">
+      <div class="col-lg-6">
         <base-button v-for="(symptom) in existingSymptoms" :key="symptom.id"
                      class="mt-2"
                      :type="hasSymptom(symptom.id) ? 'info' : 'secondary'"
@@ -88,53 +105,36 @@
           <span>{{ $t(symptom.label) }}</span>
         </base-button>
 
+        <p class="text-white mt-3">{{ $t('report.drSymptomsDays') }}</p>
+        <base-slider v-model="reportData.symptomsDays"
+                     :range="{min: 0, max: 14}"
+                     :options="{ step: 1 }">
+        </base-slider>
+        <p class="text-white">{{ Math.floor(reportData.symptomsDays) }} days ago</p>
+
       </div>
     </div>
 
     <div class="row mt-3" v-show="reportData.sick === true">
       <div class="col-lg-6">
-        <h3 class="text-white">{{ $t('report.diagnostic') }}</h3>
+        <h3 class="text-white">{{ $t('report.drTested') }}</h3>
 
-        <p class="text-white">{{ $t('report.contracted') }}</p>
+        <p class="text-white">{{ $t('report.drTestedDetails') }}</p>
 
         <base-button class="mt-2"
-                     :type="reportData.diagnostic === 1 ? 'success' : 'secondary'"
-                     @click="reportData.diagnostic = 1">
+                     :type="reportData.diagnostic === 2 ? 'warning' : 'secondary'"
+                     @click="reportData.diagnostic = 2">
           <span>{{ $t('app.no') }}</span>
         </base-button>
 
         <base-button class="mt-2"
-                     :type="reportData.diagnostic === 2 ? 'info' : 'secondary'"
-                     @click="reportData.diagnostic = 2">
-          <span>{{ $t('report.contractedProbably') }}</span>
+                     :type="reportData.diagnostic === 3 ? 'danger' : 'secondary'"
+                     @click="reportData.diagnostic = 3">
+          <span>{{ $t('app.yes') }}</span>
         </base-button>
-
-        <base-button class="mt-2"
-                     :type="reportData.diagnostic === 3 ? 'warning' : 'secondary'"
-                     @click="officialConfirmModal = true">
-          <span>{{ $t('report.contractedOfficial') }}</span>
-        </base-button>
-
-        <modal :show.sync="officialConfirmModal">
-          <template slot="header">
-            <h5 class="modal-title">{{ $t('report.contractedOfficialConfirm') }}</h5>
-          </template>
-          <div>
-            <p>{{ $t('report.contractedOfficialConfirmText') }}</p>
-          </div>
-          <template slot="footer">
-            <base-button type="secondary"
-                         @click="reportData.diagnostic = 2; officialConfirmModal = false;">{{ $t('app.no') }}
-            </base-button>
-            <base-button type="primary"
-                         @click="reportData.diagnostic = 3; officialConfirmModal = false;">{{ $t('app.yes') }}
-            </base-button>
-          </template>
-        </modal>
 
       </div>
     </div>
-
 
   </div>
 </template>
@@ -143,9 +143,9 @@
   import Modal from '@/components/Modal';
 
   export default {
-    name: 'reportClassic',
+    name: 'reportDiseaseOriented',
     components: {
-      Modal
+      Modal,
     },
     props: {
       reportData: Object,
@@ -195,7 +195,20 @@
             this.reportData.symptoms = this.reportData.symptoms.filter(s => s !== symptom);
           }
         }
+
+        if (this.reportData.sick === 'unknown') {
+          this.refreshUnknownSickStatus();
+        }
       },
+
+      refreshUnknownSickStatus() {
+        if (this.reportData.symptoms.length > 0) {
+          this.reportData.diagnostic = 3;
+        } else {
+          this.reportData.diagnostic = 0;
+        }
+
+      }
     }
   };
 
