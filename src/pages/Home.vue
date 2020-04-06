@@ -21,6 +21,13 @@
                            icon="fa fa-send">
                 {{ $t('report.title') }}
               </base-button>
+
+              <base-button class="mb-3 mb-sm-0"
+                           @click="$router.replace({ name: 'report' })"
+                           type="white"
+                           icon="fa fa-map">
+                {{ $t('home.fullMap') }}
+              </base-button>
             </div>
 
             <div class="col-12 my-3">
