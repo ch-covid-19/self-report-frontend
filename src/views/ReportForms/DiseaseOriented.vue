@@ -110,7 +110,8 @@
                      :range="{min: 0, max: 14}"
                      :options="{ step: 1 }">
         </base-slider>
-        <p class="text-white">{{ Math.floor(reportData.symptomsDays) }} days ago</p>
+        <p class="text-white">{{ $t('report.drSymptomsDaysAgo', {ignore_days: Math.floor(reportData.symptomsDays)})
+          }}</p>
 
       </div>
     </div>

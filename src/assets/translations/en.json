@@ -72,6 +72,7 @@
         "drUnknown": "I don't know",
         "drHaveSymptoms": "Do you have any of the following symptoms?",
         "drSymptomsDays": "When did you have your first symptoms?",
+        "drSymptomsDaysAgo": "{ignore_days} days ago",
         "drTested": "Have you been tested for Covid-19?",
         "drTestedDetails": "Have you been tested by your doctor, at the hospital or by the authorities? ",
         "drTestResult": "Was the test positive?"
