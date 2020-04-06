@@ -2,7 +2,7 @@
   <div>
 
     <div class="row mt-3">
-      <div class="col-lg-6">
+      <div class="col-lg-9">
 
         <p class="text-white">{{ $t('report.intro') }}</p>
 
@@ -32,7 +32,7 @@
     </div>
 
     <div class="row mt-3" v-show="reportData.sick === false">
-      <div class="col-lg-6">
+      <div class="col-lg-9">
         <h3 class="text-white">{{ $t('report.contract') }}</h3>
 
         <div class="btn-wrapper">
@@ -76,27 +76,27 @@
     </div>
 
     <div class="row mt-3" v-show="reportData.sick === false && reportData.diagnostic === 0">
-      <div class="col-lg-6">
+      <div class="col-lg-9">
         <p class="text-white">{{ $t('report.notSick') }}</p>
       </div>
     </div>
 
 
     <div class="row mt-3" v-show="reportData.sick === true">
-      <div class="col-lg-6">
+      <div class="col-lg-9">
         <h3 class="text-white">{{ $t('report.symptoms') }}</h3>
       </div>
     </div>
 
 
     <div class="row mt-3" v-show="reportData.sick === 'unknown'">
-      <div class="col-lg-6">
+      <div class="col-lg-9">
         <h3 class="text-white">{{ $t('report.drHaveSymptoms') }}</h3>
       </div>
     </div>
 
     <div class="row mt-3" v-show="reportData.sick === true || reportData.sick === 'unknown'">
-      <div class="col-lg-6">
+      <div class="col-lg-9">
         <base-button v-for="(symptom) in existingSymptoms" :key="symptom.id"
                      class="mt-2"
                      :type="hasSymptom(symptom.id) ? 'info' : 'secondary'"
@@ -119,7 +119,7 @@
     </div>
 
     <div class="row mt-3" v-show="reportData.sick === true">
-      <div class="col-lg-6">
+      <div class="col-lg-9">
         <h3 class="text-white">{{ $t('report.drTested') }}</h3>
 
         <p class="text-white">{{ $t('report.drTestedDetails') }}</p>
