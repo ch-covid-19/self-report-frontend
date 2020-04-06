@@ -23,7 +23,7 @@
               </base-button>
 
               <base-button class="mb-3 mb-sm-0"
-                           @click="$router.replace({ name: 'report' })"
+                           @click="$router.replace({ name: 'visualize' })"
                            type="white"
                            icon="fa fa-map">
                 {{ $t('home.fullMap') }}
