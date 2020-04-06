@@ -107,11 +107,13 @@
 
         <p class="text-white mt-3">{{ $t('report.drSymptomsDays') }}</p>
         <base-slider v-model="reportData.symptomsDays"
+                     class="mx-3"
                      :range="{min: 0, max: 14}"
                      :options="{ step: 1 }">
         </base-slider>
-        <p class="text-white">{{ $t('report.drSymptomsDaysAgo', {ignore_days: Math.floor(reportData.symptomsDays)})
-          }}</p>
+        <p class="text-white">
+          {{ $t('report.drSymptomsDaysAgo', {ignore_days: Math.floor(reportData.symptomsDays)}) }}
+        </p>
 
       </div>
     </div>
