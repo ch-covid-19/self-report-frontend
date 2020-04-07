@@ -7,3 +7,13 @@ export function randomString(length = 7) {
 
     return text;
 }
+
+
+Date.prototype.toISODate = function () {
+
+    if (!this) {
+        return '';
+    }
+
+    return this.toISOString().split('T')[0];
+}

@@ -62,12 +62,11 @@
     computed: {
       lastDayReports() {
 
-        if (!this.$store.state.reports) {
+        if (!this.$store.state.reports || !this.$store.state.reportsLastDay) {
           return null;
         }
 
-        return this.$store.state.reports
-          .filter(d => d.date === this.$store.state.reportsLastDay);
+        return this.$store.state.reports[this.$store.state.reportsLastDay.toISODate()];
       }
     }
   };

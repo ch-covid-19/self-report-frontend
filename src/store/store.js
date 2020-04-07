@@ -6,7 +6,8 @@ Vue.use(Vuex);
 
 export const store = new Vuex.Store({
   state: {
-    reports: null,
+    reports: {},
+    reportsDate: null,
     reportsLastDay: null,
     reportsLastUpdate: null,
 
@@ -66,12 +67,16 @@ export const store = new Vuex.Store({
       });
     },
 
-    async loadReports(context, dataFileUrl) {
+    async loadReports(context, args) {
+
+      const {url, date} = args;
+
       return new Promise(function (resolve, reject) {
-        Papa.parse(`${dataFileUrl}?timestamp=${new Date().getTime()}`, {
+        console.log(`Loading reports from '${url}'`, date);
+        Papa.parse(`${url}?timestamp=${new Date().getTime()}`, {
           download: true,
           header: true,
-          error: (err, file, inputElem, reason) => reject(`Could not get map data<br>${err}`),
+          error: (err, file, inputElem, reason) => reject(err),
           complete: (content, file) => {
 
             console.log(`Reports data downloaded and parsed`);
@@ -95,7 +100,10 @@ export const store = new Vuex.Store({
                 entry.recovered_confirmed;
             }
 
-            context.commit('setReports', data);
+            context.commit('setReports', {
+              reports: data,
+              date,
+            });
 
             resolve(data);
           }
@@ -123,8 +131,9 @@ export const store = new Vuex.Store({
     setGeocoding(state, geocoding) {
       state.geocoding = geocoding;
     },
-    setReports(state, reports) {
-      state.reports = reports;
+    setReports(state, args) {
+      const {reports, date} = args;
+      state.reports[date.toISODate()] = reports;
     },
     setReportsLastUpdate(state, lastUpdate) {
       state.reportsLastUpdate = lastUpdate;

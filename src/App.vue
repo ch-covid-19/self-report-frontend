@@ -13,9 +13,11 @@
 <script>
   import {FadeTransition} from "vue2-transitions";
   import {mapActions, mapMutations} from "vuex";
+  import AppHeader from "./layout/AppHeader";
 
   export default {
     components: {
+      AppHeader,
       FadeTransition
     },
     data() {
@@ -26,11 +28,6 @@
 
         error: null,
       }
-    },
-    computed: {
-      reportsFileUrl() {
-        return `${this.reportsFileUrlBase}/merge-all-days.csv`;
-      },
     },
     async mounted() {
 
@@ -45,10 +42,33 @@
 
       try {
         console.log(`Loading reports data...`);
-        await this.loadReports(this.reportsFileUrl);
 
-        /*  Fallback to last day with data */
-        this.setReportsLastDay(this.getLastDate(this.$store.state.reports));
+        const activeDay = new Date();
+
+        let total = 0;
+
+        while (true) {
+          try {
+            total++;
+            await this.loadReports({
+              url: `${this.reportsFileUrlBase}/daily-reports/${activeDay.toISODate()}.csv`,
+              date: activeDay,
+            });
+
+            this.setReportsLastDay(activeDay)
+
+            break;
+          } catch (error) {
+
+            if (total > 10) {
+              throw new Error('Could not get reports data');
+            }
+
+            console.error(error);
+            activeDay.setDate(activeDay.getDate() - 1)
+          }
+        }
+
         console.log(`Reports data loaded`);
 
       } catch (error) {
@@ -70,15 +90,8 @@
       ]),
       ...mapMutations([
         'setReportsLastDay',
-      ]),
-      getLastDate: function (data) {
-        /* Assumes data is ordered by date */
-        for (let i = data.length - 1; i >= 0; i--) {
-          if (data[i].date) {
-            return data[i].date;
-          }
-        }
-      },
+        'setReportsDate',
+      ])
     }
   };
 
