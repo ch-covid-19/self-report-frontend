@@ -35,9 +35,10 @@
                                slot-scope="{focus, blur}"
                                @on-open="focus"
                                @on-close="blur"
+                               @on-change="(selectedDates, dateStr, instance) => dateFilter = dateStr"
                                :config="datePickerFormat"
                                class="form-control datepicker"
-                               v-model="dateFilter">
+                               :value="dateFilter">
                   </flat-picker>
                 </base-input>
               </div>
@@ -54,7 +55,7 @@
                          :map-center-longitude="mapCenterLongitude"
                          :map-center-zoom-level="mapCenterZoomLevel"
                          :geocoding-data="$store.state.geocoding"></reports-map>
-            <p v-if="$store.state.reportsLastUpdate">
+            <p v-if="$store.state.reportsLastUpdate && dateFilter === datePickerFormat.maxDate">
               <small>{{ $t('visualize.lastUpdate') }} {{ $store.state.reportsLastUpdate.toLocaleString() }}</small>
             </p>
 
@@ -149,6 +150,7 @@
 
       addDays: function (days) {
         let date = new Date(this.dateFilter);
+        date.setHours(12); // This is because of timezone change with daylight saving time, 00:00 is a bad time
         date.setDate(date.getDate() + days);
         this.dateFilter = date.toISODate();
       },
