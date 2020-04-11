@@ -92,21 +92,35 @@
 
           <div v-else class="text-white">
 
-            <h3 class="text-white">{{ $t('report.sentThanks') }}</h3>
-            <p>{{ $t('report.sentComeBack') }}</p>
-            <p>
-              {{ $t('report.wantToSeePublicData') }}
-              <base-button size="sm" @click="$router.replace({ name: 'visualize' })" type="info">
-                {{ $t('visualize.title') }}
-              </base-button>
-            </p>
-            <p>{{ $t('report.sentSomeoneElse') }}</p>
-            <p>
-              {{ $t('report.sentMistake') }}
-              <base-button size="sm" @click="forceReportAgain = true" type="info">
-                {{ $t('report.sentMistakeClickHere') }}
-              </base-button>
-            </p>
+            <div v-if="!medicalForm">
+              <h3 class="text-white">{{ $t('report.sentThanks') }}</h3>
+
+              <p v-if="medicalFormEnabled">
+                Take medical form
+                <base-button size="sm" @click="medicalForm = true" type="info">
+                  GO
+                </base-button>
+              </p>
+
+              <p>{{ $t('report.sentComeBack') }}</p>
+              <p>
+                {{ $t('report.wantToSeePublicData') }}
+                <base-button size="sm" @click="$router.replace({ name: 'visualize' })" type="info">
+                  {{ $t('visualize.title') }}
+                </base-button>
+              </p>
+              <p>{{ $t('report.sentSomeoneElse') }}</p>
+              <p>
+                {{ $t('report.sentMistake') }}
+                <base-button size="sm" @click="forceReportAgain = true" type="info">
+                  {{ $t('report.sentMistakeClickHere') }}
+                </base-button>
+              </p>
+            </div>
+            <div v-else>
+              <report-medical></report-medical>
+            </div>
+
           </div>
         </div>
       </section>
@@ -124,10 +138,12 @@
   import LocationFromAddress from '../views/LocationEditors/LocationFromAddress';
   import ReportClassic from "../views/ReportForms/Classic";
   import ReportDiseaseOriented from "../views/ReportForms/DiseaseOriented";
+  import ReportMedical from "../views/ReportForms/Medical";
 
   export default {
     name: 'report',
     components: {
+      ReportMedical,
       ReportDiseaseOriented,
       ReportClassic,
       LocationFromAddress,
@@ -142,6 +158,8 @@
 
         locationSelector: process.env.VUE_APP_REPORT_LOCATION_SELECTOR,
         reportForm: process.env.VUE_APP_REPORT_FORM,
+        medicalFormEnabled: process.env.VUE_APP_REPORT_FORM_MEDICAL,
+        medicalForm: false,
         validLocation: false,
 
         reportData: {
