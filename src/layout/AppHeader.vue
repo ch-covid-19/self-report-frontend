@@ -41,7 +41,10 @@
         </li>
 
         <li class="nav-item">
-          <router-link class="nav-link" :to="{ name: 'about' }">
+          <a v-if="redirectOrg" class="text-white" href="http://covid-self-report.org/">
+            {{ $t('about.title') }}
+          </a>
+          <router-link v-else class="nav-link" :to="{ name: 'about' }">
             {{ $t('about.title') }}
           </router-link>
         </li>
@@ -110,6 +113,11 @@
       BaseNav,
       CloseButton,
       BaseDropdown
+    },
+    data() {
+      return {
+        redirectOrg: process.env.VUE_APP_ABOUT_REDIRECT_ORG === 'true',
+      }
     },
     methods: {
       setLocale: function (locale) {
