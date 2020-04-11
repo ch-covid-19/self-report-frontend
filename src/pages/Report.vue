@@ -72,7 +72,7 @@
                 <p>{{ sendError }}</p>
                 <p>
                   Please try again. If it still occurs, please
-                  <base-button size="sm" type="info" @click="githubIssue">report a problem</base-button>
+                  <base-button size="sm" type="info" @click="contact">contact us</base-button>
                   .
                 </p>
 
@@ -119,7 +119,7 @@
   import {v4 as uuidv4} from 'uuid';
 
   import Modal from '@/components/Modal';
-  import newGithubIssueUrl from 'new-github-issue-url';
+
   import LocationFromPostalCode from '../views/LocationEditors/LocationFromPostalCode';
   import LocationFromAddress from '../views/LocationEditors/LocationFromAddress';
   import ReportClassic from "../views/ReportForms/Classic";
@@ -191,61 +191,79 @@
       send: async function (event) {
 
         this.sending = true;
-
-        this.reportData.symptoms = this.reportData.symptoms.filter(s => s !== '');
-
-        let symptoms = [];
-        switch (this.reportData.diagnostic) {
-          case 1:
-          case 2:
-          case 3:
-            symptoms = this.reportData.symptoms;
-        }
-
         try {
+          this.reportData.symptoms = this.reportData.symptoms.filter(s => s !== '');
 
-          await this.$recaptchaLoaded();
+          let symptoms = [];
+          switch (this.reportData.diagnostic) {
+            case 1:
+            case 2:
+            case 3:
+              symptoms = this.reportData.symptoms;
+          }
 
-          // Execute reCAPTCHA with action "report".
-          const token = await this.$recaptcha('report');
+          try {
+            await this.$recaptchaLoaded();
+          } catch (error) {
+            console.error(error);
+            this.sendError = `There was a problem loading the reCAPTCHA.`;
+            this.sendErrorModal = true;
+            return;
+          }
 
-          const headers = new Headers();
-          headers.append("Content-Type", "application/json");
+          try {
+            // Execute reCAPTCHA with action "report".
+            const token = await this.$recaptcha('report');
+          } catch (error) {
+            console.error(error);
+            this.sendError = `There was a problem getting the reCAPTCHA token.`;
+            this.sendErrorModal = true;
+            return;
+          }
 
-          const response = await fetch(process.env.VUE_APP_API_ENDPOINT_REPORT, {
-            method: 'POST',
-            headers,
-            mode: 'cors',
-            cache: 'default',
-            body: JSON.stringify({
-              token: token,
-              locator: this.reportData.postalCode,
-              sessionId: this.reportData.sessionId,
-              symptoms: symptoms,
-              symptomsDays: this.reportData.symptomsDays,
-              diagnostic: this.reportData.diagnostic,
-              appVersion: process.env.VERSION,
-            }),
-          });
+          try {
+            const headers = new Headers();
+            headers.append("Content-Type", "application/json");
 
-          if (!response.ok) {
-            throw new Error('could not report');
+            const response = await fetch(process.env.VUE_APP_API_ENDPOINT_REPORT, {
+              method: 'POST',
+              headers,
+              mode: 'cors',
+              cache: 'default',
+              body: JSON.stringify({
+                token: token,
+                locator: this.reportData.postalCode,
+                sessionId: this.reportData.sessionId,
+                symptoms: symptoms,
+                symptomsDays: this.reportData.symptomsDays,
+                diagnostic: this.reportData.diagnostic,
+                appVersion: process.env.VERSION,
+              }),
+            });
+
+            console.log(response);
+
+            if (!response.ok) {
+              throw new Error('could not report');
+            }
+
+            this.forceReportAgain = false;
+
+            window.scrollTo({
+              top: 0,
+              left: 0,
+              behavior: 'smooth'
+            });
+
+          } catch (error) {
+            console.error(error);
+            this.sendError = `There was a problem when sending your data: ${error}`;
+            this.sendErrorModal = true;
           }
 
           this.reportData.lastReport = new Date();
-
           localStorage.setItem('report-data', JSON.stringify(this.reportData));
-          this.forceReportAgain = false;
 
-          window.scrollTo({
-            top: 0,
-            left: 0,
-            behavior: 'smooth'
-          });
-
-        } catch (error) {
-          this.sendError = error;
-          this.sendErrorModal = true;
         } finally {
           this.sending = false;
         }
@@ -275,15 +293,8 @@
           lastReport: null,
         }
       },
-      githubIssue: async function () {
-        const url = newGithubIssueUrl({
-          user: process.env.VUE_APP_GITHUB_REPO_OWNER,
-          repo: process.env.VUE_APP_GITHUB_REPO_NAME,
-          title: 'Error when sending from the front-end',
-          body: `The error is:\n> ${this.sendError}\n\n---\nAuto-generated from the front-end`
-        });
-
-        await open(url);
+      contact: async function () {
+        await open(process.env.VUE_APP_SOCIAL_FACEBOOK);
       }
     }
   };
