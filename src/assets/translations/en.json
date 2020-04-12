@@ -4,7 +4,7 @@
         "footer": {
             "support": "Thank you for supporting us!",
             "contact": "Let's get in touch on any of these platforms.",
-            "whatsappshare": "Report your health status to help fighting against the Covid-19!",
+            "whatsappshare": "Report your health status to help fighting against Covid-19!",
             "ch": "Switzerland",
             "in": "India",
             "mx": "Mexico"
@@ -12,12 +12,6 @@
         "yes": "Yes",
         "no": "No",
         "language": "English"
-    },
-    "home": {
-        "title": "Home",
-        "introTitle": "Help to fight the Coronavirus",
-        "introText": "We aim to provide a visualization of the progression of the Covid-19 pandemic in our country. To do so, we encourage people to report anonymously their own health status to contribute to an open database that is complementary to the official census",
-        "fullMap": "Full map"
     },
     "renewReport": {
         "comingBack": "Thanks for coming back",
@@ -29,18 +23,18 @@
     },
     "report": {
         "title": "Report",
-        "intro": "Help fighting against the new Coronavirus in Switzerland by self-reporting your health status.",
+        "intro": "Help combat the new Coronavirus in Switzerland by self-reporting your health status.",
         "how": "How are you doing?",
         "healthy": "I'm healthy",
         "sick": "I'm sick",
-        "contract": "Did you contract Covid-19 and recovered?",
+        "contract": "Did you contract Covid-19 and have since recovered?",
         "contractNo": "No",
         "contractYesRecovered": "Yes and I recovered",
-        "notSick": "Great! Stay at home even if you're not sick to avoid propagation.",
+        "notSick": "Great! Stay at home even if you're not sick to avoid contributing to the spread.",
         "symptoms": "What are your symptoms?",
         "symptomFever": "Fever (above 38°C)",
         "symptomCough": "Cough (dry)",
-        "symptomVomit": "Vomit",
+        "symptomVomit": "Vomiting",
         "symptomDyspnea": "Respiratory distress",
         "symptomWeakness": "Weakness",
         "symptomHeadache": "Headache",
@@ -54,10 +48,10 @@
         "contractedProbably": "Probably",
         "contractedOfficial": "It's official",
         "contractedOfficialConfirm": "Please confirm",
-        "contractedOfficialConfirmText": "Have you been officially tested positive to Covid-19 by a recognized medical institution?",
+        "contractedOfficialConfirmText": "Have you officially tested positive for Covid-19 by a recognized medical institution?",
         "locationQuestion": "Where do you live?",
         "locationPlaceholder": "Postal code",
-        "locationValidError": "Please enter a valid Swiss postal number",
+        "locationValidError": "Please enter a valid Swiss postal code",
         "send": "Send",
         "error": "Error",
         "errorDetails": "An error occurred when sending your data",
@@ -68,7 +62,7 @@
         "sentMistake": "You've made a mistake ? You can correct it : ",
         "sentMistakeClickHere": "click here",
         "wantToSeePublicData": "Your contribution helps to build a public dataset. If you want to see the current data, click:",
-        "drAreYouSick": "Are you actually sick from Covid-19?",
+        "drAreYouSick": "Are you currently sick from Covid-19?",
         "drUnknown": "I don't know",
         "drHaveSymptoms": "Do you have any of the following symptoms?",
         "drSymptomsDays": "When did you have your first symptoms?",
@@ -76,10 +70,6 @@
         "drTested": "Have you been tested for Covid-19?",
         "drTestedDetails": "Have you been tested by your doctor, at the hospital or by the authorities? ",
         "drTestResult": "Was the test positive?"
-    },
-    "locationAddress": {
-        "yourPostalCode": "Your postal code is {ignore_postalcode}",
-        "xMore": "+{ignore_count} more"
     },
     "visualize": {
         "title": "Visualize",
@@ -94,14 +84,14 @@
     },
     "about": {
         "title": "About us",
-        "headWho": "We are a team of swiss developers",
+        "headWho": "We are a team of Swiss developers",
         "who": "that want to help to evaluate the current situation of the COVID-19 pandemic in our country.",
         "headNeedYou": "We need you!",
         "needYou": "Our app is based on your self-reporting... so it is important that you update your health status in case of change.",
         "headData": "We don’t save any personal information in our servers!",
-        "data": "Every data is anonymous but to keep our datasets consistent, we need that you always use the same browser to update your status (otherwise you will be counted twice).",
+        "data": "All data is anonymous but to keep our datasets consistent, we need you to use the same browser to update your status (otherwise you will be counted twice).",
         "headDataUpdate": "Realtime, well...not yet!",
-        "dataUpdate": "We will update the numbers as frequently as we can. But, you will need to wait a bit especially during the beginning phase of the app.",
+        "dataUpdate": "We will update the numbers as frequently as we can. But, you will need to wait a bit especially during the initial phase of the app.",
         "headPublicData": "For other developers,",
         "publicData": "our dataset is public and open in our github. Please use it to make your own awesome visualization, or join our effort to open up in other countries",
         "headDataCare": "By the way,",
@@ -114,6 +104,22 @@
         "goalQuestion": "What is the goal of this app?",
         "goalResponse": "We aim to provide a visualization of the progression of the Covid-19 pandemic in our country. How can we 'flatten the curve' without having a statistical idea of the current situation? Help us by publishing your health status.",
         "othersQuestion": "How do I report other members of my family?",
-        "othersResponse": "We are working on this issue. For now, you can use a different devices (phones, tablet, computer) for each member of your family."
+        "othersResponse": "We are working on this issue. For now, you can use different devices (phones, tablet, computer) for each member of your family."
+    },
+    "FAQ": {
+        "goalQuestion": "What is the goal of this app?",
+        "goalResponse": "We aim to provide a visualization of the progression of the Covid-19 pandemic in our country. How can we 'flatten the curve' without having a statistical idea of the current situation? Help us by publishing your health status.",
+        "othersQuestion": "How do I report other members of my family?",
+        "othersResponse": "We are working on this issue. For now, you can use a different device (phones, tablet, computer) for each member of your family."
+    },
+    "home": {
+        "title": "Home",
+        "introTitle": "Help to fight the Coronavirus",
+        "introText": "We aim to provide a visualization of the progression of the Covid-19 pandemic in our country. To do so, we encourage people to report anonymously their own health status to contribute to an open database that is complementary to the official census",
+        "fullMap": "Full map"
+    },
+    "locationAddress": {
+        "yourPostalCode": "Your postal code is {ignore_postalcode}",
+        "xMore": "+{ignore_count} more"
     }
 }
