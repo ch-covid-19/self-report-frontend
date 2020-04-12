@@ -1,1 +1,125 @@
-
+{
+    "app": {
+        "title": "Self report",
+        "footer": {
+            "support": "Vielen Dank für Ihre Mitarbeit!",
+            "contact": "Sie können uns auf einer dieser Plattformen verfolgen.",
+            "whatsappshare": "Berichten Sie über Ihren Gesundheitszustand, um den Kampf gegen den Covid-19 zu unterstützen!",
+            "ch": "Schweiz",
+            "in": "Indien",
+            "mx": "Mexico"
+        },
+        "yes": "Ja",
+        "no": "Nein",
+        "language": "Deutsch"
+    },
+    "renewReport": {
+        "comingBack": "Danke, dass Sie zurückgekommen sind",
+        "daysSince": "Es sind {days} seit Ihrem letzten Bericht vergangen",
+        "explainOther": " Wenn Sie sich für eine andere Person melden wollen, benutzen Sie bitte ein anderes Telefon, ein Tablett oder einen anderen Computer.",
+        "click": " Klicken Sie",
+        "here": "hier",
+        "ifNotYou": " wenn Sie es nicht waren"
+    },
+    "report": {
+        "title": "Bericht",
+        "intro": "Helfen Sie bei der Bekämpfung des neuen Coronavirus in der Schweiz, indem Sie Ihren Gesundheitszustand selbst melden.",
+        "how": "Wie geht es Ihnen?",
+        "healthy": "Ich bin gesund",
+        "sick": "Ich bin krank",
+        "contract": "Sind Sie erkrankt und haben sich erholt?",
+        "contractNo": "Nein",
+        "contractYesRecovered": "Ja, und ich habe mich davon erholt",
+        "notSick": "Großartig! Bleiben Sie zu Hause, auch wenn Sie nicht krank sind, um die Ausbreitung zu vermeiden",
+        "symptoms": "Welches sind Ihre Symptome?",
+        "symptomFever": "Fieber (mehr als 38°C)",
+        "symptomCough": "Husten(trocken)",
+        "symptomVomit": "Erbrechen",
+        "symptomDyspnea": "Atembeschwerden",
+        "symptomWeakness": "Schwach fühlen",
+        "symptomHeadache": "Kopfschmerzen",
+        "symptomCold": "Kalt",
+        "symptomDiarrhoea": "Durchfall",
+        "symptomTasteSmell": "Geschmacks-/Geruch Störung",
+        "symptomOthers": "andere",
+        "diagnostic": "Wie ist die Diagnose?",
+        "contracted": "Glauben Sie, dass Sie durch Ihre letzten sozialen Kontakte an Covid-19 erkrankt sind?",
+        "contractedNo": "Nein",
+        "contractedProbably": "Vielleicht",
+        "contractedOfficial": "Offiziell bestätigt",
+        "contractedOfficialConfirm": "Bitte bestätigen",
+        "contractedOfficialConfirmText": "Sind Sie von einer anerkannten medizinischen Institution offiziell positiv auf Krankheit getestet worden?",
+        "locationQuestion": "Wo  wohnen Sie?",
+        "locationPlaceholder": "Postleitzahl",
+        "locationValidError": "Bitte geben Sie eine gültige Schweizer Postleitzahl ein",
+        "send": "Senden",
+        "error": "Fehler",
+        "errorDetails": "Beim Senden Ihrer Daten ist ein Fehler aufgetreten",
+        "errorClose": "Schliessen",
+        "sentThanks": "Vielen Dank",
+        "sentComeBack": "Danke für Ihren Beitrag. Wenn sich Ihr Gesundheitszustand geändert hat kommen Sie bitte auf diese Seite zurück um Ihren Status anzupassen.",
+        "sentSomeoneElse": "Wenn Sie sich für eine andere Person melden, verwenden Sie bitte ein anderes Telefon, Tablet oder Computer.",
+        "sentMistake": "Haben Sie einen Fehler gemacht ? Sie können diesen korrigieren:",
+        "sentMistakeClickHere": "Bitte hier klicken",
+        "wantToSeePublicData": "Ihr Beitrag trägt zum Aufbau eines öffentlichen Datensatzes bei. Wenn Sie die aktuellen Daten sehen möchten, klicken Sie auf :",
+        "drAreYouSick": "Sind Sie derzeit an Covid-19 erkrankt?",
+        "drUnknown": "Ich weiß es nicht.",
+        "drHaveSymptoms": "Haben Sie eines der folgenden Symptome?",
+        "drSymptomsDays": "Wann hatten Sie Ihre ersten Symptome?",
+        "drSymptomsDaysAgo": "{ignore_days} vor Tagen",
+        "drTested": "Sind Sie auf Covid-19 getestet worden?",
+        "drTestedDetails": "Sind Sie von Ihrem Arzt, im Krankenhaus oder von den Behörden getestet worden?",
+        "drTestResult": "War der Test positiv?"
+    },
+    "visualize": {
+        "title": "Visualisieren",
+        "dataWarning": "Die folgenden Daten werden von der Gemeinschaft gesammelt und nicht überprüft",
+        "lastUpdate": "Letzte Aktualisierung:",
+        "layerHealthy": "Gesund",
+        "layerSickNoCovid": "Andere Krankheiten",
+        "layerSickCovid": "Covid-19 (wahrscheinlich)",
+        "layerSickCovidConfirmed": "Covid-19 (getestet)",
+        "layerRecovered": "Geheilt",
+        "layerRecoveredConfirmed": "Recovered (tested)"
+    },
+    "about": {
+        "title": "Ueber uns",
+        "headWho": "Wir sind ein Team von Schweizer Entwicklern",
+        "who": ", die helfen wollen, die aktuelle Situation der COVID-19-Pandemie in unserem Land zu bewerten.",
+        "headNeedYou": "Wir brauchen Sie!",
+        "needYou": "Unsere App basiert auf Ihre Selbstmeldung ... es ist wichtig, dass Sie alle zurückkommen, um Ihren Gesundheitszustand im Falle einer Änderung zu aktualisieren.",
+        "headData": "Wir speichern keine persönlichen Daten auf unseren Servern!",
+        "data": "Alle Daten sind anonym, aber um unsere Datensätze aktuell zu halten, müssen Sie immer denselben Browser verwenden, um Ihren Status zu aktualisieren (andernfalls werden Sie zweimal gezählt).",
+        "headDataUpdate": "Echtzeit, na ja... nein!",
+        "dataUpdate": "Wir werden die Zahlen so oft wie möglich aktualisieren. Vor allem in der Anfangsphase der App müssen Sie jedoch etwas Geduld haben.",
+        "headPublicData": "Für andere Entwickler",
+        "publicData": "ist unser Datensatz öffentlich und in unserem Github offen. Bitte verwenden Sie es, um Ihre eigene Visualisierung zu erstellen.",
+        "headDataCare": "Übrigens",
+        "dataCare": ", denken Sie daran, dass unsere Daten auf Selbstberichten basieren, daher sind die Daten nicht offiziell und können Fehler enthalten. Die Daten sollen nur als Indikator dienen.",
+        "headImprovement": "Wenn Sie Verbesserungsvorschläge haben",
+        "improvement": " oder einen Fehler melden möchten, wenden Sie sich bitte an uns über Facebook."
+    },
+    "faq": {
+        "title": "FAQ",
+        "goalQuestion": "Was ist das Ziel dieser App?",
+        "goalResponse": "Unser Ziel ist es, den Verlauf der Covid-19-Pandemie in unserem Land zu veranschaulichen. Wie können wir die \"Kurve abflachen\", ohne eine statistische Vorstellung von der aktuellen Situation zu haben? Helfen Sie uns, indem Sie Ihren Gesundheitszustand veröffentlichen.",
+        "othersQuestion": "Wie melde ich andere Mitglieder meiner Familie?",
+        "othersResponse": "Wir arbeiten an diesem Thema. Vorerst können Sie für jedes Mitglied Ihrer Familie unterschiedliche Geräte (Telefon, Tablett, Computer) verwenden."
+    },
+    "FAQ": {
+        "goalQuestion": "Was ist das Ziel dieser App?",
+        "goalResponse": "Wir wollen den Verlauf der Covid-19-Pandemie in unserem Land sichtbar machen. Wie können wir die \"Kurve abflachen\", ohne eine statistische Vorstellung von der aktuellen Situation zu haben? Helfen Sie uns, indem Sie Ihren Gesundheitszustand veröffentlichen.",
+        "othersQuestion": "Wie melde ich andere Mitglieder meiner Familie?",
+        "othersResponse": "Wir arbeiten an diesem Thema. Vorerst können Sie für jedes Familienmitglied ein anderes Gerät (Telefon, Tablett, Computer) verwenden."
+    },
+    "home": {
+        "title": "Startseite",
+        "introTitle": "Hilfe im Kampf gegen das Coronavirus",
+        "introText": "Unser Ziel ist es, den Verlauf der Covid-19-Pandemie in unserem Land zu veranschaulichen. Um dies zu erreichen, ermutigen wir die Menschen, anonym ihren eigenen Gesundheitszustand zu melden, um zu einer offenen Datenbank beizutragen, die die offizielle Volkszählung ergänzt",
+        "fullMap": "Ganze Karte"
+    },
+    "locationAddress": {
+        "yourPostalCode": "Ihre Postleitzahl lautet {ignore_postalcode}",
+        "xMore": "+{ignore_count} mehr"
+    }
+}
