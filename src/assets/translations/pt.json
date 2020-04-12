@@ -3,8 +3,11 @@
         "title": "Autoavaliação",
         "footer": {
             "support": "Agradecemos o seu apoio!",
-            "contact": "Contacte conosco por qualquer uma destas plataformas.",
-            "whatsappshare": "Informe sobre o seu estado de saúde para ajudar a combater o Covid-19!"
+            "contact": "Fale conosco por qualquer uma destas plataformas.",
+            "whatsappshare": "Informe sobre o seu estado de saúde para ajudar a combater o Covid-19!",
+            "ch": "Suíça",
+            "in": "Índia",
+            "mx": "México"
         },
         "yes": "Sim",
         "no": "Não",
@@ -39,7 +42,7 @@
         "symptomDiarrhoea": "Diarreia",
         "symptomTasteSmell": "Transtornos do paladar / olfato ",
         "symptomOthers": "Outros",
-        "diagnostic": "Qual é o diagnóstico?",
+        "diagnostic": "Você tem o COVID-19?",
         "contracted": "Em relação aos seus contatos sociais recentes, você pensa que contraiu o Coronavírus?",
         "contractedNo": "Não",
         "contractedProbably": "Provavelmente",
@@ -57,7 +60,16 @@
         "sentComeBack": "Agradecemos a sua contribuição. Por favor volte caso o seu estado de saúde mude.",
         "sentSomeoneElse": "Caso você queira avaliar outra pessoa, por favor, use outro celular, tablet ou computador.",
         "sentMistake": "Você cometeu um erro ? Você pode fazer uma correção :",
-        "sentMistakeClickHere": "clique aqui"
+        "sentMistakeClickHere": "clique aqui",
+        "wantToSeePublicData": "Sua contribuição ajuda a construir uma base de dados pública. Caso você queira ver os dados atuais, clique: ",
+        "drAreYouSick": "Atualmente, você tem o Coronavírus?",
+        "drUnknown": "Eu não sei",
+        "drHaveSymptoms": "Você tem algum dos sintomas seguintes?",
+        "drSymptomsDays": "Quando ocorreram os primeiros sintomas?",
+        "drSymptomsDaysAgo": "Faz {ignore_days} dias",
+        "drTested": "Você foi testado/a para o Coronavírus?",
+        "drTestedDetails": "Você foi testado/a pelo seu médico, no hospital ou pelas autoridades?",
+        "drTestResult": "O teste deu positivo?"
     },
     "visualize": {
         "title": "Visualizar",
@@ -66,20 +78,20 @@
         "layerHealthy": "Saudável",
         "layerSickNoCovid": "Outras doenças",
         "layerSickCovid": "Covid-19 (provável)",
-        "layerSickCovidConfirmed": "Covid-19 (testados/as)",
-        "layerRecovered": "Recuperados/as",
-        "layerRecoveredConfirmed": "Recuperados/as (testados/as)"
+        "layerSickCovidConfirmed": "Covid-19 (testado/a)",
+        "layerRecovered": "Recuperado/a",
+        "layerRecoveredConfirmed": "Recuperado/a (testado/a)"
     },
     "about": {
         "title": "Sobre",
-        "headWho": "Somos uma equipe de programadores suíços",
+        "headWho": "Somos uma equipe de programadores Suíços",
         "who": "que quer ajudar a avaliar a atual situação da pandemia do COVID-19 no nosso país.",
-        "headNeedYou": "Precisamos de ti!",
-        "needYou": "A nossa aplicação é baseada na sua autoavaliação...então é importante que todos vocês venham atualizar o seu estado de saúde caso ele mude. ",
+        "headNeedYou": "Precisamos de você!",
+        "needYou": "O nosso aplicativo é baseado na sua autoavaliação...então é importante que todos vocês venham atualizar o seu estado de saúde caso ele mude. ",
         "headData": "Não armazenamos nenhum dado pessoal nos nossos servidores!",
         "data": "Todos os dados são anônimos mas para poder manter a coerência da nossa base de dados, precisamos que você sempre use o mesmo navegador para atualizar seu status (caso contrário, você será contado duas vezes). ",
-        "headDataUpdate": "Em tempo real, hum...não!",
-        "dataUpdate": "Em tempo real, hum...não! Forneceremos atualizações dos números e dados com a maior frequência possível. Porém, você vai ter que esperar um pouco, especialmente na fase de lançamento do aplicativo. ",
+        "headDataUpdate": "Em tempo real, hum...ainda não!",
+        "dataUpdate": "Forneceremos atualizações dos números e dados com a maior frequência possível. Porém, você vai ter que esperar um pouco, especialmente na fase de lançamento do aplicativo. ",
         "headPublicData": "Para outros programadores, ",
         "publicData": "A nossa base de dados é pública e partilhada no Github . Por favor, use-a para criar uma incrivel visualização sua. ",
         "headDataCare": "Aliás,",
@@ -88,6 +100,26 @@
         "improvement": "para melhorar o aplicativo ou caso você queira relatar um erro, por favor, entre em contato conosco no Facebook. "
     },
     "faq": {
-        "title": "PF (perguntas frequentes)"
+        "title": "PF (perguntas frequentes)",
+        "goalQuestion": "Qual é o objetivo desse aplicativo?",
+        "goalResponse": "Pretendemos providenciar a visualização da evolução da pandemia Covid-19 no nosso país. Como podemos nivelar a curva sem nenhuma estatística sobre a situação atual? Nos ajude comunicando e informando sobre o seu estado de saúde.",
+        "othersQuestion": "Como avaliar outros membros da minha família?",
+        "othersResponse": "Estamos resolvendo esta questão. Por enquanto, você pode usar dispositivos diferentes (celulares, tablet, computador) para cada membro da sua família."
+    },
+    "FAQ": {
+        "goalQuestion": "Qual é o objetivo desse aplicativo?",
+        "goalResponse": "Pretendemos providenciar a visualização da evolução da pandemia Covid-19 no nosso país. Como podemos nivelar a curva sem nenhuma estatística sobre a situação atual? Nos ajude comunicando e informando sobre o seu estado de saúde. ",
+        "othersQuestion": "Como avaliar outros membros da minha família?",
+        "othersResponse": "Estamos resolvendo esta questão. Por enquanto, use dispositivos diferentes (celulares, tablet, computador) para cada membro da sua família. "
+    },
+    "home": {
+        "title": "Página inicial",
+        "introTitle": "Ajude a combater o Coronavírus",
+        "introText": "Pretendemos providenciar a visualização da evolução da pandemia Covid-19 no nosso país. Por isso, incentivamos as pessoas a fazer a autoavaliação do seu estado de saúde de forma anônima, para contribuir e poder abrir uma base de dados como complemento da contagem oficial.",
+        "fullMap": "Mapa completo"
+    },
+    "locationAddress": {
+        "yourPostalCode": "O seu código postal é {ignore_postalcode}",
+        "xMore": "+{ignore_count} mais"
     }
 }
