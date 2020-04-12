@@ -4,7 +4,10 @@
         "footer": {
             "support": "Gracias por apoyarnos!",
             "contact": "Contáctanos a través de cualquiera de estas plataformas.",
-            "whatsappshare": "Reporta tu estado de salud para ayudar a luchar contra el Covid-19!"
+            "whatsappshare": "Reporta tu estado de salud para ayudar a luchar contra el Covid-19!",
+            "ch": "Suiza",
+            "in": "India",
+            "mx": "México"
         },
         "yes": "Si",
         "no": "No",
@@ -57,7 +60,16 @@
         "sentComeBack": "Gracias por tu contribución. Regresa si tu estado de salud cambia.",
         "sentSomeoneElse": "Si deseas reportar a otra persona, use otro celular, tableta o computadora.",
         "sentMistake": "¿Has cometido un error? Puedes arreglarlo: ",
-        "sentMistakeClickHere": "has clic aquí"
+        "sentMistakeClickHere": "has clic aquí",
+        "wantToSeePublicData": "Tu contribución ayuda a todos a tener una información pública más detallada. Si quieres puedes ver los datos dale clic aquí:",
+        "drAreYouSick": "¿Estás actualmente enfermo de Covid-19?",
+        "drUnknown": "No lo sé",
+        "drHaveSymptoms": "¿Tienes algunos de estos síntomas?",
+        "drSymptomsDays": "¿Cuándo comenzaron los primeros síntomas?",
+        "drSymptomsDaysAgo": "hace {ingnore_days} días",
+        "drTested": "¿Te han hecho la prueba del Covid-19? ",
+        "drTestedDetails": "¿Has sido examinado por tu médico, en el hospital o por las autoridades? ",
+        "drTestResult": "¿La prueba dió positivo?"
     },
     "visualize": {
         "title": "Visualizar",
@@ -88,6 +100,26 @@
         "improvement": "de mejora o si deseas reportar un error, ponte en contacto con nosotros por Facebook."
     },
     "faq": {
-        "title": "Preguntas más frecuentes"
+        "title": "Preguntas más frecuentes",
+        "goalQuestion": "¿Cuál es el objetivo de este app?",
+        "goalResponse": "Nuestro objetivo es proporcionar una visualización de la progresión de la pandemia de Covid-19 en nuestro país. ¿Cómo podemos \"aplanar la curva\" sin tener una idea estadística de la situación actual? Ayúdenos publicando su estado de salud.",
+        "othersQuestion": "¿Cómo reporto a otros miembros de mi familia?",
+        "othersResponse": "Estamos trabajando en este problema. Por ahora, puedes usar un dispositivo diferente (teléfono, tableta, ordenador) para cada miembro de tu familia."
+    },
+    "FAQ": {
+        "goalQuestion": "¿Cuál es el objetivo de esta aplicación?",
+        "goalResponse": "La forma de combatir el COVID-19 es aplanando la curva de contagios, esta aplicación es un apoyo al Gobierno y a la Población para tener una rápida visualización del avance de la pandemia en nuestro país.\n\nPara todos los países es un reto mantener información en tiempo real, por eso nos hemos unido a una iniciativa mundial para proveer esta aplicación.",
+        "othersQuestion": "¿Cómo puedo reportar otros miembros de mi familia?",
+        "othersResponse": "Estamos trabajando en este tema. Por ahora, puedes usar diferentes dispositivos (teléfonos, tabletas, computadora) para cada miembro de tu familia."
+    },
+    "home": {
+        "title": "Inicio",
+        "introTitle": "Ayuda en la lucha contra el coronavirus",
+        "introText": "Nuestro objetivo es proporcionar una visualización de la progresión de la pandemia de Covid-19 en nuestro país. Para ello, animamos a la gente a informar anónimamente sobre su propio estado de salud para contribuir a una base de datos abierta que es complementaria al censo oficial",
+        "fullMap": "Mapa completo"
+    },
+    "locationAddress": {
+        "yourPostalCode": "Tu código postal es {ignore_postalcode}",
+        "xMore": "+{ignore_count} más"
     }
 }
